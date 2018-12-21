@@ -1,19 +1,12 @@
-const express = require("express");
 const path = require("path");
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+module.exports = app => {
+  //server get request
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/home.html"));
+  });
 
-//server get request
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
-});
-
-app.get("/survey", function(req, res) {
-  res.sendFile(path.join(__dirname, "survey.html"));
-});
-
-//initiate server
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
-});
+  app.get("/survey", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/survey.html"));
+  });
+};
