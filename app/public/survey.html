@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>FriendFinder</title>
+    <title>RickFinder</title>
 
     <!-- Latest compiled and minified CSS & JS -->
     <link
@@ -183,7 +183,7 @@
         <div class="container">
           <p>
             <a href="/api/friends">API Friends List</a> |
-            <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a>
+            <a href="https://github.com/carl-vega/friend-finder">GitHub Repo</a>
           </p>
         </div>
       </footer>
@@ -283,6 +283,7 @@
 
               newIMG.attr("src", images[i]);
               newH2.html(names[i]);
+              newLI.attr("style", "list-style-type:none");
               newLI.append(newH2);
               newLI.append(newIMG);
               $("#match-name").append(newLI);

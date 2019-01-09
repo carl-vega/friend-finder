@@ -1,4 +1,5 @@
 const friends = require("../data/friends");
+const fs = require("fs");
 
 module.exports = app => {
   // Displays all friends
@@ -59,9 +60,8 @@ module.exports = app => {
         matchImage.push(friends[i].photo);
       }
     }
-
     // Add new user
-    friends.push(userInput);
+    fs.write(friends, userInput);
 
     // Send appropriate response
     res.json({ status: "OK", matchName: matchName, matchImage: matchImage });
