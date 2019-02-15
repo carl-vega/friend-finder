@@ -61,7 +61,7 @@ module.exports = app => {
       }
     }
     // Add new user
-    fs.write(friends, userInput);
+    friends.push(userInput);
 
     // Send appropriate response
     res.json({ status: "OK", matchName: matchName, matchImage: matchImage });
